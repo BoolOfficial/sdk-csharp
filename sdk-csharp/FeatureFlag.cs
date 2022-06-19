@@ -4,6 +4,7 @@ namespace Bool
 {
     public class FeatureFlag
     {
+
     }
 }
 

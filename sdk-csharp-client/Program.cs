@@ -13,16 +13,20 @@ namespace ExampleNS
             var flags = await boolsdk.GetFeatureFlags();
 
             Console.WriteLine("Feature Flags: ");
-            foreach (var flag in flags)
+            foreach (var f in flags)
             {
                 Console.WriteLine("--------------------");
-                Console.WriteLine($"Id: {flag.Id}");
-                Console.WriteLine($"Name: {flag.Name}");
-                Console.WriteLine($"Key: {flag.Key}");
-                Console.WriteLine($"Desc: {flag.Description}");
-                Console.WriteLine($"Value: {flag.Value}");
+                Console.WriteLine($"Id: {f.Id}");
+                Console.WriteLine($"Name: {f.Name}");
+                Console.WriteLine($"Key: {f.Key}");
+                Console.WriteLine($"Desc: {f.Description}");
+                Console.WriteLine($"Value: {f.Value}");
                 Console.WriteLine("--------------------");
             }
+
+            var flag = await boolsdk.GetFeatureFlag("ROUND_BUTTON");
+
+            Console.WriteLine($"Single Flag fetch: {flag.Name} - {flag.Value}");
         }
     }
 }

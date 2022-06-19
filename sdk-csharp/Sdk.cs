@@ -6,6 +6,7 @@ using GraphQL.Client.Serializer.SystemTextJson;
 
 namespace Bool
 {
+
     public class Sdk
     {
         static readonly string USE_BOOL_API = "https://api.usebool.com/v1/graphql";
@@ -22,7 +23,7 @@ namespace Bool
         {
             Query = @"
                 query GetFeatureFlags {
-                     Bool_FeatureFlag {
+                     Bool_FeatureFlag(order_by: {name: asc}) {
                         id
                         key
                         name
@@ -36,6 +37,37 @@ namespace Bool
         {
             var gqlresponse = await _graphQLClient.SendQueryAsync<FeatureFlagResponse>(featureFlagsRequest);
             return gqlresponse.Data.Bool_FeatureFlag;
+        }
+
+        static readonly GraphQLRequest featureFlagByKeyRequest = new()
+        {
+            Query = @"
+                query GetFeatureFlags($key: String = """") {
+                      Bool_FeatureFlag(where: {key: {_eq: $key}}) {
+                        id
+                        key
+                        name
+                        description
+                        value
+                      }
+                }"
+        };
+
+        public async Task<FeatureFlag> GetFeatureFlag(string key)
+        {
+            featureFlagByKeyRequest.Variables = new
+            {
+                key
+            };
+
+            var gqlresponse = await _graphQLClient.SendQueryAsync<FeatureFlagResponse>(featureFlagByKeyRequest);
+
+            if (gqlresponse.Data.Bool_FeatureFlag.Count > 0)
+            {
+                return gqlresponse.Data.Bool_FeatureFlag[0];
+            }
+
+            else throw new FeatureFlagNotFoundException($"No features flags match: {key}");
         }
     }
 }

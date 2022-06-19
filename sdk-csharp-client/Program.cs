@@ -1,8 +1,8 @@
 ﻿using Bool;
 
-namespace TestClient
+namespace ExampleNS
 {
-    class TestApp
+    class ExampleApp
     {
         static async Task Main(string[] args)
         {

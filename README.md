@@ -11,4 +11,4 @@ Bool - C# SDK
 
 ## Introduction
 
-This package is our client(C#) SDK. Built using .NET Standard 2.1 It can be used directly for any C# .NET application.
+This package is our C# .NET client SDK. Built using .NET Standard 2.1 It can be used directly for any .NET application.

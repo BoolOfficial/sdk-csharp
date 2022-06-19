@@ -8,4 +8,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\sdk-csharp\sdk-csharp.csproj" />
+  </ItemGroup>
 </Project>

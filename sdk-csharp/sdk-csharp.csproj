@@ -6,7 +6,7 @@
 		<Authors>Bool</Authors>
 		<Company>Bool</Company>
 		<Version>1.0.0</Version>
-		<PackageId>UseBool.SDK</PackageId>
+		<PackageId>Bool.SDK</PackageId>
 		<PackageTags>FeatureFlags,SDK</PackageTags>
 		<Description>This package will help you connect with with Bool feature flags - learn more at usebool.com </Description>
 	</PropertyGroup>

@@ -5,10 +5,10 @@
 		<RootNamespace>sdk_csharp</RootNamespace>
 		<Authors>Bool</Authors>
 		<Company>Bool</Company>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<PackageId>Bool.SDK</PackageId>
 		<PackageTags>FeatureFlags,SDK</PackageTags>
-		<Description>This package will help you connect with with Bool feature flags - learn more at usebool.com </Description>
+		<Description>This package will help you connect with Bool feature flag system - learn more at https://usebool.com </Description>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<LangVersion>latestmajor</LangVersion>

@@ -24,9 +24,16 @@ namespace ExampleNS
                 Console.WriteLine("--------------------");
             }
 
-            var flag = await boolsdk.GetFeatureFlag("ROUND_BUTTON");
+            try
+            {
+                var flag = await boolsdk.GetFeatureFlag("ROUND_BUTTON");
+                Console.WriteLine($"Single Flag fetch: {flag.Name} - {flag.Value}");
+            }
+            catch (FeatureFlagNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
-            Console.WriteLine($"Single Flag fetch: {flag.Name} - {flag.Value}");
         }
     }
 }

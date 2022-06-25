@@ -1,24 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>sdk_csharp</RootNamespace>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <LangVersion>latestmajor</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <LangVersion>latestmajor</LangVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="System.Text.Json" />
-    <None Remove="GraphQL.Client" />
-    <None Remove="GraphQL.Client.Serializer.SystemTextJson" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="6.0.5" />
-    <PackageReference Include="GraphQL.Client" Version="4.0.2" />
-    <PackageReference Include="GraphQL.Client.Serializer.SystemTextJson" Version="4.0.2" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<RootNamespace>sdk_csharp</RootNamespace>
+		<Authors>Bool</Authors>
+		<Company>Bool</Company>
+		<Version>1.0.0</Version>
+		<PackageId>UseBool.SDK</PackageId>
+		<PackageTags>FeatureFlags,SDK</PackageTags>
+		<Description>This package will help you connect with with Bool feature flags - learn more at usebool.com </Description>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<LangVersion>latestmajor</LangVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<LangVersion>latestmajor</LangVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="System.Text.Json" />
+		<None Remove="GraphQL.Client" />
+		<None Remove="GraphQL.Client.Serializer.SystemTextJson" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" Version="6.0.5" />
+		<PackageReference Include="GraphQL.Client" Version="4.0.2" />
+		<PackageReference Include="GraphQL.Client.Serializer.SystemTextJson" Version="4.0.2" />
+	</ItemGroup>
 </Project>

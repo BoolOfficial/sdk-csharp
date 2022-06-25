@@ -19,6 +19,6 @@ jobs:
     - name: Build
       run: dotnet build sdk-csharp --no-restore -c Release
     - name: Pack
-      run: dotnet pack -c Release --no-build
+      run: dotnet pack sdk-csharp -c Release --no-build
     - name: Publish
-      run: dotnet nuget push -k ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push "*.nupkg" -k ${{ secrets.NUGET_API_KEY }}

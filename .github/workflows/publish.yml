@@ -21,4 +21,4 @@ jobs:
     - name: Pack
       run: dotnet pack sdk-csharp -c Release --no-build
     - name: Publish
-      run: dotnet nuget push "*.nupkg" -k ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }}
